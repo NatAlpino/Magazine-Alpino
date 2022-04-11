@@ -6,7 +6,7 @@ const StyledImg = styled(Grid)`
     display: flex;
     justify-content: center;
     margin: 20px;
-    margin-left: 20px;    
+    margin-left: 20px;
   }
 `;
 

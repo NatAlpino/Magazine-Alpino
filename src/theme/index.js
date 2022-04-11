@@ -1,4 +1,3 @@
-  
 const theme = {
   colors: {
     header: "#bf798d",
@@ -12,4 +11,3 @@ const theme = {
   fontSizes: { small: "1em", medium: "2em", large: "3em" },
 };
 export default theme;
-

@@ -7,13 +7,15 @@ import CloseIcon from "@mui/icons-material/Close";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Container from "@material-ui/core/Container";
 import { formatNumber } from "../../utils";
-import {StyledImg,
+import {
+  StyledImg,
   StyledTitle,
   StyledPrice,
   StyledFavoriteAndShoppingCar,
   StyledCloseIcon,
   StyledCardTitle,
-  StyledDialog,} from "../../StyledComponents/Favorite/exports";
+  StyledDialog,
+} from "../../StyledComponents/Favorite/exports";
 
 export default function FavoriteModal(props) {
   const [open, setOpen] = React.useState(false);

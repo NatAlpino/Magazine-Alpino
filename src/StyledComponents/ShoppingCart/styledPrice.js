@@ -5,10 +5,10 @@ const StyledPrice = styled(Typography)`
   && {
     font-size: 1em;
     font-weight: bold;
-    font-family: 'Josefin Sans';
+    font-family: "Josefin Sans";
     display: flex;
     justify-content: start;
-    margin: 20px;    
+    margin: 20px;
   }
 `;
 

@@ -2,7 +2,7 @@ import StyledCard from "../../StyledComponents/Main/styledCard";
 import StyledTitle from "../../StyledComponents/Header/styledTitle";
 import StyledSubTitle from "../../StyledComponents/Header/styledSubTitle";
 import StyledImg from "../../StyledComponents/Main/styledImg";
-import StyledFavoriteAndShoppingCar from "../../StyledComponents/Main/styledFavoriteAndShoppingCar";
+import StyledFavoriteAndShoppingCart from "./styledFavoriteAndShoppingCart";
 import StyledTitleMan from "../../StyledComponents/Main/styledTitleMan";
 import StyledPriceMan from "../../StyledComponents/Main/styledTitleMan";
 import StyledButtonDetails from "../../StyledComponents/Main/styledButtonDetails";
@@ -18,7 +18,7 @@ export {
   StyledTitle,
   StyledSubTitle,
   StyledImg,
-  StyledFavoriteAndShoppingCar,
+  StyledFavoriteAndShoppingCart,
   StyledTitleMan,
   StyledPriceMan,
   StyledButtonDetails,

@@ -5,7 +5,7 @@ const StyledSubTotal = styled(Typography)`
   && {
     font-size: 1.3em;
     font-weight: bold;
-    font-family: 'Josefin Sans';
+    font-family: "Josefin Sans";
     display: flex;
     margin-top: 10px;
     justify-content: start;

@@ -21,7 +21,7 @@ import {
   StyledDialog,
   StyledQuantity,
   StyledPaper,
-} from "../../StyledComponents/ShoppingCard/exports";
+} from "../../StyledComponents/ShoppingCart/exports";
 export default function ShoppingCartModal(props) {
   const [open, setOpen] = useState(false);
   const [total, setTotal] = useState(0);
@@ -29,20 +29,20 @@ export default function ShoppingCartModal(props) {
   const handleOpen = (e) => {
     recalculate();
     e.preventDefault();
-    if (props.shoppingCardList.length) {
+    if (props.shoppingCartList.length) {
       setOpen(true);
     }
   };
 
   const getQuantity = () => {
-    return props.shoppingCardList.reduce((accum, currentValue) => {
+    return props.shoppingCartList.reduce((accum, currentValue) => {
       return accum + currentValue.quantity;
     }, 0);
   };
 
   const recalculate = () => {
     let accumulator = 0;
-    props.shoppingCardList.forEach((item) => {
+    props.shoppingCartList.forEach((item) => {
       item.totalItem = item.price * item.quantity;
       accumulator += item.totalItem;
     });
@@ -52,7 +52,7 @@ export default function ShoppingCartModal(props) {
   const handleClose = () => setOpen(false);
 
   const handleProductActions = (item, action) => {
-    const index = props.shoppingCardList.indexOf(item);
+    const index = props.shoppingCartList.indexOf(item);
     if (!item.quantity) {
       action = "del";
     }
@@ -67,14 +67,14 @@ export default function ShoppingCartModal(props) {
           break;
         }
         case "del": {
-          props.shoppingCardList.splice(index, 1);
+          props.shoppingCartList.splice(index, 1);
           return;
         }
         default:
           throw new Error("Invalid action");
       }
       if (item.quantity > 0) {
-        props.shoppingCardList.slice(index, 1, item);
+        props.shoppingCartList.slice(index, 1, item);
       } else {
         handleProductActions(item, "del");
       }
@@ -95,23 +95,23 @@ export default function ShoppingCartModal(props) {
         </StyledCloseIcon>
         <Container>
           <Typography variant="h6" component="h2">
-            {props.shoppingCardList.map((shoppingCardItem) => (
+            {props.shoppingCartList.map((shoppingCartItem) => (
               <>
                 <StyledPaper elevation={8}>
-                  <Grid container spacing={2} key={shoppingCardItem.key}>
+                  <Grid container spacing={2} key={shoppingCartItem.key}>
                     <Grid>
-                      <StyledImg src={shoppingCardItem.image} alt="id" />
+                      <StyledImg src={shoppingCartItem.image} alt="id" />
                     </Grid>
                     <Grid>
-                      <StyledTitle>{`${shoppingCardItem.title.substring(
+                      <StyledTitle>{`${shoppingCartItem.title.substring(
                         0,
                         15
                       )}`}</StyledTitle>
                       <StyledPrice>
-                        Valor: {formatNumber(shoppingCardItem.price)}
+                        Valor: {formatNumber(shoppingCartItem.price)}
                       </StyledPrice>
                       <StyledPrice>
-                      Valor Total: {formatNumber(shoppingCardItem.totalItem)} 
+                        Valor Total: {formatNumber(shoppingCartItem.totalItem)}
                       </StyledPrice>
                     </Grid>
                     <StyledQuantity
@@ -122,19 +122,19 @@ export default function ShoppingCartModal(props) {
                       <Grid item={4}>
                         <RemoveCircleOutlineIcon
                           onClick={() =>
-                            handleProductActions(shoppingCardItem, "dec")
+                            handleProductActions(shoppingCartItem, "dec")
                           }
                         />
                       </Grid>
                       <Grid item={4}>
                         <Typography>
-                          {shoppingCardItem.quantity || 0}
+                          {shoppingCartItem.quantity || 0}
                         </Typography>
                       </Grid>
                       <Grid item={4}>
                         <AddCircleOutlineIcon
                           onClick={() =>
-                            handleProductActions(shoppingCardItem, "inc")
+                            handleProductActions(shoppingCartItem, "inc")
                           }
                         />
                       </Grid>
@@ -142,7 +142,7 @@ export default function ShoppingCartModal(props) {
                     <Button
                       color="error"
                       onClick={() =>
-                        handleProductActions(shoppingCardItem, "del")
+                        handleProductActions(shoppingCartItem, "del")
                       }
                     >
                       Excluir Item

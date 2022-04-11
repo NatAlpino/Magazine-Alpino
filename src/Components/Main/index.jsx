@@ -21,7 +21,7 @@ import {
   StyledTitle,
   StyledSubTitle,
   StyledImg,
-  StyledFavoriteAndShoppingCar,
+  StyledFavoriteAndShoppingCart,
   StyledTitleMan,
   StyledPriceMan,
   StyledButtonDetails,
@@ -120,7 +120,7 @@ const Main = () => {
               <FavoriteModal favoriteList={favorites} />
             </Grid>
             <Grid item sm={1.33} display="contents" margin-left="20px">
-              <ShoppingCartModal shoppingCardList={shoppingCarts} />
+              <ShoppingCartModal shoppingCartList={shoppingCarts} />
             </Grid>
 
             <Grid item sm={1.33}>
@@ -132,19 +132,31 @@ const Main = () => {
 
       <StyledCategories container alignItems="center">
         <Grid item sm={2.4}>
-          <StyledButtonCategories onClick={() => setCategory("all")}>All</StyledButtonCategories>
+          <StyledButtonCategories onClick={() => setCategory("all")}>
+            All
+          </StyledButtonCategories>
         </Grid>
         <Grid item sm={2.4}>
-          <StyledButtonCategories onClick={() => setCategory("women's clothing")}>Girls</StyledButtonCategories>
+          <StyledButtonCategories
+            onClick={() => setCategory("women's clothing")}
+          >
+            Girls
+          </StyledButtonCategories>
         </Grid>
         <Grid item sm={2.4}>
-          <StyledButtonCategories onClick={() => setCategory("men's clothing")}>Boys</StyledButtonCategories>
+          <StyledButtonCategories onClick={() => setCategory("men's clothing")}>
+            Boys
+          </StyledButtonCategories>
         </Grid>
         <Grid item sm={2.4}>
-          <StyledButtonCategories onClick={() => setCategory("jewelery")}>Acessories</StyledButtonCategories>{" "}
+          <StyledButtonCategories onClick={() => setCategory("jewelery")}>
+            Acessories
+          </StyledButtonCategories>{" "}
         </Grid>
         <Grid item sm={2.4}>
-          <StyledButtonCategories onClick={() => setCategory("electronics")}>Eletronics</StyledButtonCategories>
+          <StyledButtonCategories onClick={() => setCategory("electronics")}>
+            Eletronics
+          </StyledButtonCategories>
         </Grid>
       </StyledCategories>
       <Container>
@@ -153,7 +165,7 @@ const Main = () => {
             <Grid item xs={4}>
               <StyledCard>
                 <Grid spacing={3} alignItems="center" justifyContent="center">
-                  <StyledFavoriteAndShoppingCar>
+                  <StyledFavoriteAndShoppingCart>
                     <IconButton sx={{ "&:hover": { color: "blue" } }}>
                       <FavoriteIcon onClick={() => handleFavorites(product)} />
                     </IconButton>
@@ -162,7 +174,7 @@ const Main = () => {
                         onClick={() => handleShoppingCart(product)}
                       />
                     </IconButton>
-                  </StyledFavoriteAndShoppingCar>
+                  </StyledFavoriteAndShoppingCart>
                 </Grid>
                 <StyledImg item xs={12}>
                   <img src={product.image} alt={product.id} />

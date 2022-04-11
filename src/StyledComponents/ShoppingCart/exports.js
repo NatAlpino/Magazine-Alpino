@@ -23,5 +23,5 @@ export {
   StyledTotal,
   StyledDialog,
   StyledQuantity,
-  StyledPaper
+  StyledPaper,
 };
